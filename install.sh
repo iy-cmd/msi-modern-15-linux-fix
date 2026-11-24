@@ -52,7 +52,6 @@ install() {
 
     # 4. Helper binaries
     info "Installing user helper binaries to /usr/local/bin..."
-    install -m 755 "$SCRIPT_DIR/bin/msi-kbd-fade.sh" /usr/local/bin/msi-kbd-fade
     install -m 755 "$SCRIPT_DIR/bin/msi-mute-led.sh" /usr/local/bin/msi-mute-led
     install -m 755 "$SCRIPT_DIR/bin/msi-mute-sync-daemon.sh" /usr/local/bin/msi-mute-sync-daemon
     success "Helper binaries installed in /usr/local/bin."
@@ -69,7 +68,6 @@ install() {
 
     echo ""
     success "All fixes have been installed successfully!"
-    echo "Tip: You can use 'msi-kbd-fade in/out/toggle' to smoothly adjust keyboard backlight."
     echo "Tip: You can use 'msi-mute-led speaker/mic toggle' to manually control indicator LEDs."
 }
 
@@ -81,7 +79,6 @@ uninstall() {
     rm -f /etc/modules-load.d/msi-ec.conf
     rm -f /etc/udev/rules.d/99-msi-leds.rules
     rm -f /etc/udev/hwdb.d/90-msi-modern-keyboard.hwdb
-    rm -f /usr/local/bin/msi-kbd-fade
     rm -f /usr/local/bin/msi-mute-led
     rm -f /usr/local/bin/msi-mute-sync-daemon
 
