@@ -1,0 +1,3 @@
+# Allow non-root users to control keyboard backlight and mute/micmute LEDs on MSI laptops
+SUBSYSTEM=="leds", KERNEL=="platform::*", RUN+="/bin/chmod a+rw /sys/class/leds/%k/brightness"
+SUBSYSTEM=="leds", KERNEL=="msiacpi::*", RUN+="/bin/chmod a+rw /sys/class/leds/%k/brightness"
